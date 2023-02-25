@@ -1,0 +1,15 @@
+{
+  "ODate": "2023-02-17T18:25:43.511Z",
+  "BestellNummer": "S1337",
+  "Testbestellung": 1,
+  "LieferantNr": 100001,
+  "Artikel": [
+    {
+      "ArtikelNummer": "1301014",
+      "Artikel Name ": "Das Elektronische Hanuta",
+      "Artikel Beschreibung": "Auch ein Hanuta schmeckt besser mit verbauten Halbleitern",
+      "BestellMenge": 2,
+      "Preis": 10.00
+    }
+  ]
+}
