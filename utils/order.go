@@ -13,7 +13,7 @@ type Order struct {
 
 type Header struct {
 	XMLName     xml.Name    `xml:"ORDER_HEADER"`
-	Info        OrderInfo   `xml:"ORDER_INFO"`
+	OrderInfo   OrderInfo   `xml:"ORDER_INFO"`
 	ControlInfo ControlInfo `xml:"CONTROL_INFO"`
 }
 
@@ -34,7 +34,7 @@ type ControlInfo struct {
 
 type Parties struct {
 	XMLName xml.Name `xml:"PARTIES"`
-	Parties []Item   `xml:"PARTY"`
+	Parties []Party  `xml:"PARTY"`
 }
 
 type Party struct {
