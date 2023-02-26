@@ -28,8 +28,6 @@ func Convert(content []byte) ([]byte, error) {
 		return nil, errors.Join(err, fmt.Errorf("error validating input json"))
 	}
 
-	fmt.Println(orderData)
-
 	// get involved parties
 	var (
 		supplier = data.GetSupplierByID(fmt.Sprintf("%d", orderData.LieferantNr))
@@ -94,7 +92,7 @@ func convertItemsData(input data.Data, supplier, buyer utils.Party) ([]utils.Ord
 
 	for i, item := range input.Artikel {
 		priceLineAmount := float64(item.BestellMenge) * item.Preis
-		items = append(items, utils.OrderItem{
+		items[i] = utils.OrderItem{
 			LineItemID: fmt.Sprintf("%d", i+1),
 			ProductID: utils.ProductID{
 				SupplierPID:      item.ArtikelNummer, // Assumption, same as BuyerPID
@@ -107,7 +105,7 @@ func convertItemsData(input data.Data, supplier, buyer utils.Party) ([]utils.Ord
 				PriceAmount: fmt.Sprintf("%f", item.Preis),
 			},
 			PriceLineAmount: fmt.Sprintf("%f", priceLineAmount),
-		})
+		}
 		totalAmount += priceLineAmount
 	}
 
