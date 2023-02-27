@@ -13,3 +13,8 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# Project specific files:
+order.xml
+# bin
+Task.txt

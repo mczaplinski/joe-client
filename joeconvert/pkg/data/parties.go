@@ -34,8 +34,9 @@ var (
 	}
 )
 
-// TODO: get supplier party from a database or somewhere else
+// GetSupplierByID returns a supplier party by its ID
 func GetSupplierByID(supplierID string) utils.Party {
+	// TODO: get supplier party from a database or somewhere else
 	if supplierID == "100001" {
 		return utils.Party{
 			PartyID:   "100001",
